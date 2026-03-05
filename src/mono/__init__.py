@@ -1,3 +1,4 @@
+import questionary
 import typer
 
 app = typer.Typer()
@@ -5,4 +6,11 @@ app = typer.Typer()
 
 @app.command()
 def main() -> None:
-    typer.echo("Hello from mono!")
+    while True:
+        choice = questionary.select(
+            "mono",
+            choices=["Add", "Delete", "Edit", "Exit"],
+        ).ask()
+
+        if choice == "Exit" or choice is None:
+            raise typer.Exit()
