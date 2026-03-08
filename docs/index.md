@@ -5,15 +5,17 @@ title: Home
 
 <section class="hero">
   <div class="container">
-    <p class="hero-label">v0.1.0 — open source</p>
-    <h1>Your personal<br>link archive.</h1>
+    <p class="hero-badge">v0.1.0 — open source</p>
+    <h1>Your personal<br><span>link archive.</span></h1>
     <p class="hero-sub">
       mono is a minimal command-line tool for saving, organizing and
       revisiting URLs with notes — no account, no cloud, just a JSON
       file on your machine.
     </p>
-    <a class="btn btn-primary" href="#install">Get started</a>
-    <a class="btn btn-secondary" href="https://github.com/NicoAppAkademie/mono-cli" target="_blank" rel="noopener">GitHub →</a>
+    <div class="btn-group">
+      <a class="btn btn-primary" href="#install">Get started →</a>
+      <a class="btn btn-secondary" href="https://github.com/NicoAppAkademie/mono-cli" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
 
     <div class="terminal">
       <span class="prompt">$ </span><span class="cmd">uv run mono</span><br>
@@ -21,7 +23,7 @@ title: Home
       <span class="out"> ❯ </span><span class="highlight">Add</span><br>
       <span class="out">   Delete</span><br>
       <span class="out">   Edit</span><br>
-      <span class="out">   Exit</span>
+      <span class="out">   Exit</span><span class="cursor"></span>
     </div>
   </div>
 </section>
@@ -75,13 +77,13 @@ title: Home
     <p>mono requires <strong>Python 3.13+</strong> and <a href="https://github.com/astral-sh/uv" target="_blank" rel="noopener">uv</a>.</p>
 
     <div class="terminal">
-      <span class="prompt"># Clone the repository</span><br>
+      <span class="prompt comment"># Clone the repository</span><br>
       <span class="prompt">$ </span><span class="cmd">git clone https://github.com/NicoAppAkademie/mono-cli.git</span><br>
       <span class="prompt">$ </span><span class="cmd">cd mono-cli</span><br><br>
-      <span class="prompt"># Install dependencies</span><br>
+      <span class="prompt comment"># Install dependencies</span><br>
       <span class="prompt">$ </span><span class="cmd">uv sync</span><br><br>
-      <span class="prompt"># Run mono</span><br>
-      <span class="prompt">$ </span><span class="cmd">uv run mono</span>
+      <span class="prompt comment"># Run mono</span><br>
+      <span class="prompt">$ </span><span class="cmd">uv run mono</span><span class="cursor"></span>
     </div>
   </div>
 </section>
@@ -97,12 +99,12 @@ title: Home
     </p>
 
     <div class="terminal">
-      <span class="prompt"># Adding a link</span><br>
+      <span class="prompt comment"># Adding a link</span><br>
       <span class="prompt">$ </span><span class="cmd">uv run mono</span><br>
       <span class="out">? mono  Add</span><br>
       <span class="out">? URL:  </span><span class="cmd">https://example.com/article</span><br>
       <span class="out">? Note: </span><span class="cmd">Great read on distributed systems</span><br>
-      <span class="highlight">Saved: https://example.com/article</span>
+      <span class="highlight">✔ Saved: https://example.com/article</span>
     </div>
 
     <p>Links are persisted in <code>~/.mono/links.json</code> and look like this:</p>
