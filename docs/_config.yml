@@ -1,0 +1,15 @@
+title: mono
+description: Personal link archive — a minimal CLI for saving and managing links.
+url: ""
+baseurl: ""
+
+theme: null
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+collections:
+  pages:
+    output: true
