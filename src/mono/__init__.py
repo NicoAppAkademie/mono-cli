@@ -33,6 +33,22 @@ def handle_add() -> None:
     typer.echo(f"Saved: {url}")
 
 
+def handle_delete() -> None:
+    url = questionary.text("URL:").ask()
+    if url is None:
+        return
+
+    links = load_links()
+    if url not in [link["url"] for link in links]:
+        typer.echo(f'URL {url} not found in links!')
+        return
+
+    links = [link for link in links if link["url"] != url]
+    save_links(links)
+
+    typer.echo(f"Deleted: {url}")
+
+
 @app.command()
 def main() -> None:
     while True:
@@ -46,3 +62,6 @@ def main() -> None:
 
         if choice == "Add":
             handle_add()
+
+        if choice == 'Delete':
+            handle_delete()
